@@ -81,6 +81,7 @@ class USARTSerial : public Stream
     USARTSerial(STM32_USART_Info *usartMapPtr);
     virtual ~USARTSerial() {};
     void begin(unsigned long);
+    void beginonewire(unsigned long baud);
     void begin(unsigned long, uint8_t);
     void end();
 

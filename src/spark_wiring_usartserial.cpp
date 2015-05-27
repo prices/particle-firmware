@@ -134,6 +134,12 @@ void USARTSerial::begin(unsigned long baud)
 	USARTSerial_Enabled = true;
 	transmitting = false;
 }
+void USARTSerial::beginonewire(unsigned long baud)
+{
+    USARTSerial::begin(baud);
+//    pinMode(usartMap->usart_tx_pin, AF_OUTPUT_DRAIN);
+    USART_HalfDuplexCmd(usartMap->usart_peripheral, ENABLE);
+}
 
 // TODO
 void USARTSerial::begin(unsigned long baud, byte config)

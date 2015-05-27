@@ -143,6 +143,8 @@ CFLAGS += $(EXTRA_CFLAGS)
 # C++ specific flags
 CPPFLAGS += -fno-rtti -fno-exceptions
 
+CFLAGS += $(EXTRA_CFLAGS)
+
 # Linker flags
 LDFLAGS += -T$(PROJECT_DIR)linker/linker_stm32f10x_md_dfu.ld -nostartfiles -Xlinker --gc-sections 
 LDFLAGS += -L$(PROJECT_DIR)$(LIB_CORE_COMMON_PATH)build -lcore-common-lib
